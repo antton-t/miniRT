@@ -20,7 +20,7 @@ void	ft_joinstr(char **str, char **buff)
 	*str = tmp;
 
 }
-char	*get_next_line(int fd, int buffer_size)
+char	*ft_get_next_line(int fd, int buffer_size)
 {
 
 	char *str = NULL;

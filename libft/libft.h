@@ -82,5 +82,6 @@ char			**ft_split(char const *s, char c);
 size_t			ft_strlen(const char *s);
 size_t			ft_strlcat(char *dst, const char *src, size_t n);
 size_t			ft_strlcpy(char *dst, const char *src, size_t size);
+void			ft_joinstr(char** str, char **buff);
 void			ft_free_split(char **split, int i);
 #endif
