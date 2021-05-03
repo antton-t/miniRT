@@ -29,6 +29,7 @@ int main (int argc, char **argv)
 	int   fd;
 	char *str1;
 	char **out;
+	char *out1;
 	int i = 0;
 
 	if (argc == 2 && (ft_check_argv(argv[1], ".rt") == 1))
@@ -38,21 +39,17 @@ int main (int argc, char **argv)
 			return (0);
 		printf("Your miniRT will be execute\n");
 		str1 = ft_get_next_line(fd, 1);
-		out = ft_split(str1, '\n');
+		printf(" %s\n",str1);
+		out1 = ft_rmv_tab(str1);
+		printf(" %s\n",out1);
+		out = ft_split(out1, '\n');
 		while (out[i])
 		{
-			printf("%s\n",out[i]);
+			printf(" %s\n",out[i]);
 			i++;
-		}
-		out = ft_rmv_tab(out);
-		i = 0;
-		while (out[i])
-		{
-			printf("%s\n",out[i]);
-			i++;
-		}
+		} 
 	}
-	if (argc == 3 && (ft_check_argv(argv[1], ".rt") == 1) && ((ft_check_argv(argv[2], "-save") == 1) || (ft_check_argv(argv[2], "--save") == 1)))
+	else if (argc == 3 && (ft_check_argv(argv[1], ".rt") == 1) && ((ft_check_argv(argv[2], "-save") == 1) || (ft_check_argv(argv[2], "--save") == 1)))
 	{
 		printf("Your miniRT will be save and execute\n");
 	}

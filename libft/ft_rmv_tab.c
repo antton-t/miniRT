@@ -1,44 +1,39 @@
 #include "libft.h"
 
-char	**ft_rmv_tab(char  **str)
+char	*ft_rmv_tab(char *str)
 {
-	char	**out;
-	int	i;
-	int	j;
-	int	k;
-	int	space;
+	char	*out;
+	size_t	i;
+	size_t	j;
+	size_t	space;
 
+	space = 0;
 	i = 0;
-	while (str[i])
-		i++;
-	if (!(out = (char**)malloc(sizeof(char *) * (i + 1))))
+	j = 0;
+	if (!(out = (char *)malloc(sizeof(char) * (ft_strlen(str) + 1))))
 		return (NULL);
-	i = 0;
 	while (str[i])
 	{
-		j = 0;
-		k = 0;
-		if(!(out[i] = (char*)malloc(sizeof(char) * (ft_strlen(str[i] + 1)))))
-			return (NULL);
-		while (str[i][j])
-		{
-			if (str[i][j] != ' ' ||  str[i][j] != '\t')
-			{
-				out[i][k] = str[i][j];
-				k++;
-				j++;
-				space = 1;
-			}
-			if ((str[i][j] == ' ' || str[i][j] == '\t') && space == 1)
-			{
-				out[i][k] = ' ';
-				k++;
-				j++;
-				space = 0;
-			}
-			else
-				j++;
+		if (str[i] != ' ' && str[i] != '\t')
+		{	out[j] = str[i];
+			i++;
+			j++;
+			space = 1;
 		}
+		else if ((str[i] == ' '  || str[i] == '\t') &&  space == 1)
+		{
+			out[j] = ' ';
+			i++;
+			j++;
+			space = 0;
+		}
+		else
+			i++;
 	}
-	return  (out);
+	while (j <  ft_strlen(str))
+	{
+		out[j] = 0;
+		j++;
+	}
+	return (out);
 }
