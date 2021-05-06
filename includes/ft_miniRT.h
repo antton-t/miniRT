@@ -20,10 +20,9 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <string.h>
+#include "struct.h"
 
 void    ft_is_light(char **line);
-void    ft_parse(char **line);
-int	ft_check_argv(char *str, char *end);
-char	*get_next_line(int, int buffer_size);
+int    ft_parse(char **line);
 
 #endif
