@@ -12,11 +12,15 @@
 
 NAME = miniRT
 CC = gcc
-HEAD = -Iincludes -Ilibft
+HEAD = -I./includes -Ilibft
 CFLAGS = -Wall -Wextra -Werror
-FILES = main.c \
+FILES = main.c\
 
 DIR_PARSE_and_FORM =	srcs/ft_parse.c \
+			srcs/ft_init_reso.c \
+			srcs/ft_init_ambi.c \
+			srcs/ft_init_cam.c \
+			srcs/ft_init_light.c \
 			srcs/form/ft_is_light.c \
 
 DIR_ADD =  \
@@ -27,7 +31,7 @@ DIR_UTILS =  \
 
  
 OBJ = $(FILES:.c=.o) \
-			$(DIR_PARSE_and_IS:.c=.o) \
+			$(DIR_PARSE_and_FORM:.c=.o) \
 			$(DIR_ADD:.c=.o) \
 			$(DIR_UTILS:.c=.o) \
 

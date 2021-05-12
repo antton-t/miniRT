@@ -24,5 +24,9 @@
 
 void    ft_is_light(char **line);
 int    ft_parse(char **line);
+t_ion	*ft_init_reso(void);
+t_ent	*ft_init_ambi(void);
+t_ght	*ft_init_light(void);
+t_era	*ft_init_cam(void);
 
 #endif

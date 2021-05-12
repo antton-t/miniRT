@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_minirt.h"
+#include "ft_miniRT.h"
 
-void    ft_is_light(**line)
+void    ft_is_light(char **line)
 {
-  return (void);
+  (void)line;
 }

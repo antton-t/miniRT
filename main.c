@@ -41,6 +41,11 @@ int main (int argc, char **argv)
 		str1 = ft_get_next_line(fd, 1);
 		out1 = ft_rmv_tab(str1);
 		out = ft_split(out1, '\n');
+		while (out[i])
+		{
+			printf("%s\n",out[i]);
+			i++;
+		}
 		i = ft_parse(out);
 	}
 	else if (argc == 3 && (ft_check_argv(argv[1], ".rt") == 1) && ((ft_check_argv(argv[2], "-save") == 1) || (ft_check_argv(argv[2], "--save") == 1)))

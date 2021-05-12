@@ -21,6 +21,8 @@ SRC := \
 	ft_memcpy.c \
 	ft_memccpy.c \
 	ft_memmove.c \
+	ft_atof.c \
+	ft_atof_1.c \
 	ft_memchr.c \
 	ft_memcmp.c \
 	ft_strlen.c \
@@ -40,6 +42,9 @@ SRC := \
 	ft_strlcat.c \
 	ft_strnstr.c \
 	ft_atoi.c \
+	ft_atoi_count.c \
+	ft_intlength.c \
+	ft_doublength.c \
 	ft_calloc.c \
 	ft_strdup.c \
 	ft_substr.c \
