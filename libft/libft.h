@@ -69,6 +69,7 @@ int				ft_tolower(int c);
 int				ft_doublength(double nb);
 int				ft_toupper(int c);
 int				ft_atoi(const char *nptr);
+int				ft_atoi_1(char **nptr);
 int				ft_atoi_count(const char *nptr, int *count);
 int				ft_isspace(const char s);
 int				ft_memcmp(const void *s1, const void *s2, size_t n);

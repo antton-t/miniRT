@@ -16,5 +16,5 @@ t_era	*ft_init_cam(void)
 	new->c_3d_y = 0;
 	new->c_3d_z = 0;
 	new->c_fov = 0;
-	return (NULL);
+	return (new);
 }

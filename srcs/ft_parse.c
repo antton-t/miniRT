@@ -51,12 +51,8 @@ int	ft_parse_ambient(char *str)
 	if (*ptr == 'A')
 	{
 		ptr++;
-		param_ambient->light_range = ft_atof(ptr, &(param_ambient->ambi_length));
-		while (param_ambient->ambi_length >= 0)
-		{
-			ptr++;
-			param_ambient->ambi_length --;
-		}
+		param_ambient->light_range = ft_atof_1(&ptr);
+		ptr++;
 		param_ambient->a_r = ft_atoi_count(ptr, &(param_ambient->ambi_length));
 		while ((param_ambient->ambi_length) >= 0)
 		{
@@ -85,10 +81,19 @@ int	ft_parse_camera(char *str)
 	if (*str == 'c')
 	{
 		str++;
-printf("%s =>ptr\n",str);
 		param_cam->c_x = ft_atof_1(&str);
-	//	param_cam->c_x = ft_atof_1(&ptr, &(param_cam->cam_length));
-	//	param_cam->c_x = ft_atof_1(&ptr, &(param_cam->cam_length));
+		str++;
+		param_cam->c_y = ft_atof_1(&str);
+		str++;
+		param_cam->c_z = ft_atof_1(&str);
+		str++;
+		param_cam->c_3d_x = ft_atof_1(&str);
+		str++;
+		param_cam->c_3d_y = ft_atof_1(&str);
+		str++;
+		param_cam->c_3d_z = ft_atof_1(&str);
+		str++;
+		param_cam->c_fov = ft_atoi(str);
 	}
 	else
 		return (0);
@@ -96,11 +101,37 @@ printf("%s =>ptr\n",str);
 }
 int	ft_parse_light(char *str)
 {
-	int	i;
+	t_ght	*param_light;
 
-	i = 0;
-	while (str[i])
-		i++;
+	param_light = ft_init_light();
+	while (*str == ' ' || *str == '\t')
+		str++;
+	if (*str == 'l')
+	{
+		str++;
+		param_light->l_x = ft_atof_1(&str);
+		str++;
+		param_light->l_y = ft_atof_1(&str);
+		str++;
+		param_light->l_z = ft_atof_1(&str);
+		str++;
+		param_light->l_bright = ft_atof_1(&str);
+		str++;
+		param_light->l_r = ft_atoi_1(&str);
+		str++;
+		param_light->l_g = ft_atoi_1(&str);
+		str++;
+		param_light->l_b = ft_atoi_1(&str);
+printf("%f =>l_x\n",param_light->l_x);
+printf("%f =>l_y\n",param_light->l_y);
+printf("%f =>l_z\n",param_light->l_z);
+printf("%f =>l_bright\n",param_light->l_bright);
+printf("%i =>l_r\n",param_light->l_r);
+printf("%i =>l_g\n",param_light->l_g);
+printf("%i =>l_b\n",param_light->l_b);
+	}
+	else
+		return (0);
 	return (1);
 }
 int	ft_parse(char **line)

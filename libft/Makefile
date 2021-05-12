@@ -42,6 +42,7 @@ SRC := \
 	ft_strlcat.c \
 	ft_strnstr.c \
 	ft_atoi.c \
+	ft_atoi_1.c \
 	ft_atoi_count.c \
 	ft_intlength.c \
 	ft_doublength.c \
