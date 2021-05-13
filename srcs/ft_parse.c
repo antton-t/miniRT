@@ -15,25 +15,21 @@
 
 int	ft_parse_resolution(char *str)
 {
-	char	*ptr;
 	t_ion	*param_reso;
-	int	i;
 
 	param_reso = ft_init_reso();
-	ptr = str;
-	while (*ptr == ' ' || *ptr == '\t')
-		ptr++;
-	if (*ptr == 'R')
+	if (ft_check_reso(str) == 0)
+		return (0);
+	while (*str == ' ' || *str == '\t')
+		str++;
+	if (*str == 'R')
 	{
-		ptr++;
-		param_reso->r_x = ft_atoi(ptr);
-		i = ft_intlength(param_reso->r_x);
-		while (i >= 0)
-		{
-			ptr++;
-			i--;
-		}
-		param_reso->r_y = ft_atoi(ptr);
+		str++;
+		param_reso->r_x = ft_atoi_1(&str);
+		str++;
+		param_reso->r_y = ft_atoi(str);
+printf("%i =>r_x\n",param_reso->r_x);
+printf("%i =>r_y\n",param_reso->r_y);
 	}
 	else
 		return (0);
@@ -41,31 +37,28 @@ int	ft_parse_resolution(char *str)
 }
 int	ft_parse_ambient(char *str)
 {
-	char	*ptr;
 	t_ent	*param_ambient;
 
 	param_ambient = ft_init_ambi();
-	ptr = str;
-	while (*ptr == ' ' || *ptr == '\t')
-		ptr++;
-	if (*ptr == 'A')
+	if (ft_check_ambient(str) == 0)
+		return (0);
+	while (*str == ' ' || *str == '\t')
+		str++;
+	if (*str == 'A')
 	{
-		ptr++;
-		param_ambient->light_range = ft_atof_1(&ptr);
-		ptr++;
-		param_ambient->a_r = ft_atoi_count(ptr, &(param_ambient->ambi_length));
-		while ((param_ambient->ambi_length) >= 0)
-		{
-			ptr++;
-			param_ambient->ambi_length --;
-		}
-		param_ambient->a_g = ft_atoi_count(ptr, &(param_ambient->ambi_length));
-		while ((param_ambient->ambi_length) >= 0)
-		{
-			ptr++;
-			param_ambient->ambi_length --;
-		}
-		param_ambient->a_b = ft_atoi_count(ptr, &(param_ambient->ambi_length));
+		str++;
+		param_ambient->light_range = ft_atof_1(&str);
+		str++;
+		param_ambient->a_r = ft_atoi_1(&str);
+		str++;
+		param_ambient->a_g = ft_atoi_1(&str);
+		str++;
+		param_ambient->a_b = ft_atoi(str);
+
+printf("%f =>light_range\n",param_ambient->light_range);
+printf("%i =>a_r\n",param_ambient->a_r);
+printf("%i =>a_g\n",param_ambient->a_g);
+printf("%i =>a_ b\n",param_ambient->a_b);
 	}
 	else
 		return (0);
@@ -94,6 +87,14 @@ int	ft_parse_camera(char *str)
 		param_cam->c_3d_z = ft_atof_1(&str);
 		str++;
 		param_cam->c_fov = ft_atoi(str);
+
+printf("%f =>c_x\n",param_cam->c_x);
+printf("%f =>c_y\n",param_cam->c_y);
+printf("%f =>c_z\n",param_cam->c_z);
+printf("%f =>c_3d_x\n",param_cam->c_3d_x);
+printf("%f =>c_3d_y\n",param_cam->c_3d_y);
+printf("%f =>c_3d_z\n",param_cam->c_3d_z);
+printf("%i =>fov\n",param_cam->c_fov);
 	}
 	else
 		return (0);

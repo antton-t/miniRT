@@ -26,12 +26,13 @@ int main(int argc, char **argv)
 */
 int main (int argc, char **argv)
 {
-	int   fd;
-	char *str1;
-	char **out;
-	char *out1;
-	int i = 0;
+	int	fd;
+	char	*str1;
+	char	**out;
+	char	*out1;
+	int	i;
 
+	i = 0;
 	if (argc == 2 && (ft_check_argv(argv[1], ".rt") == 1))
 	{
 		fd = open(argv[1], O_RDONLY);
@@ -46,7 +47,8 @@ int main (int argc, char **argv)
 			printf("%s\n",out[i]);
 			i++;
 		}
-		i = ft_parse(out);
+		if (ft_parse(out) == 0)
+			printf("Err0r\nCheck the file you have send\n");
 	}
 	else if (argc == 3 && (ft_check_argv(argv[1], ".rt") == 1) && ((ft_check_argv(argv[2], "-save") == 1) || (ft_check_argv(argv[2], "--save") == 1)))
 	{

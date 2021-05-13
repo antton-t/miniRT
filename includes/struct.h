@@ -10,7 +10,6 @@ typedef struct r_ion
 typedef  struct a_ent
 {
 	double	light_range;
-	int	ambi_length;
 	int	a_r;
 	int	a_g;
 	int	a_b;
@@ -18,7 +17,6 @@ typedef  struct a_ent
 
 typedef	struct  c_era
 {
-	int	cam_length;
 	double	c_x;
 	double	c_y;
 	double	c_z;

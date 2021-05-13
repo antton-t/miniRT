@@ -17,6 +17,10 @@ CFLAGS = -Wall -Wextra -Werror
 FILES = main.c\
 
 DIR_PARSE_and_FORM =	srcs/ft_parse.c \
+			srcs/check/ft_check_reso.c \
+			srcs/check/ft_check_ambient.c \
+			srcs/check/ft_check_deci.c \
+			srcs/check/ft_check_entier.c \
 			srcs/ft_init_reso.c \
 			srcs/ft_init_ambi.c \
 			srcs/ft_init_cam.c \

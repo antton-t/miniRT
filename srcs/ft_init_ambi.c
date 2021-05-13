@@ -9,7 +9,6 @@ t_ent	*ft_init_ambi(void)
 	if (!(new = (t_ent *)malloc(sizeof(t_ent))))
 		return (NULL);
 	new->light_range = 0;
-	new->ambi_length = 0;
 	new->a_r = 0;
 	new->a_g = 0;
 	new->a_b = 0;
