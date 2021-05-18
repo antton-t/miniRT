@@ -1,3 +1,6 @@
+#include  "libft.h"
+#include "ft_miniRT.h"
+
 int	ft_check_entier(char **str)
 {
 	char	*ptr;

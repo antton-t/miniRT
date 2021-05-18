@@ -40,10 +40,11 @@ int	ft_parse_ambient(char *str)
 	t_ent	*param_ambient;
 
 	param_ambient = ft_init_ambi();
-	if (ft_check_ambient(str) == 0)
-		return (0);
 	while (*str == ' ' || *str == '\t')
 		str++;
+printf("%s =>ambi\n",str);
+	if (ft_check_ambient(str) == 0)
+		return (0);
 	if (*str == 'A')
 	{
 		str++;
@@ -74,6 +75,8 @@ int	ft_parse_camera(char *str)
 	if (*str == 'c')
 	{
 		str++;
+		if (ft_check_cam(str) == 0)
+			return (0);
 		param_cam->c_x = ft_atof_1(&str);
 		str++;
 		param_cam->c_y = ft_atof_1(&str);
@@ -110,6 +113,9 @@ int	ft_parse_light(char *str)
 	if (*str == 'l')
 	{
 		str++;
+printf("%s =>light\n",str);
+		if (ft_check_light(str) == 0)
+			return (0);
 		param_light->l_x = ft_atof_1(&str);
 		str++;
 		param_light->l_y = ft_atof_1(&str);

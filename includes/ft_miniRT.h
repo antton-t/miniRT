@@ -29,7 +29,10 @@ t_ent	*ft_init_ambi(void);
 t_ght	*ft_init_light(void);
 t_era	*ft_init_cam(void);
 int	ft_check_deci(char **str);
+int	ft_check_deci_1(char **str);
 int	ft_check_entier(char **str);
 int	ft_check_ambient(char *str);
 int	ft_check_reso(char *str);
+int	ft_check_cam(char *str);
+int	ft_check_light(char *str);
 #endif
