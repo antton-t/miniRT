@@ -21,8 +21,10 @@ DIR_PARSE_and_FORM =	srcs/ft_parse.c \
 			srcs/check/ft_check_light.c \
 			srcs/check/ft_check_cam.c \
 			srcs/check/ft_check_ambient.c \
+			srcs/check/ft_check_ambient_value.c \
+			srcs/check/ft_check_cam_value.c \
+			srcs/check/ft_check_light_value.c \
 			srcs/check/ft_check_deci.c \
-			srcs/check/ft_check_deci_1.c \
 			srcs/check/ft_check_entier.c \
 			srcs/ft_init_reso.c \
 			srcs/ft_init_ambi.c \

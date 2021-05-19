@@ -5,32 +5,30 @@ int	ft_check_ambient(char *str)
 {
 	int	i;
 	int	j;
-	char	*ptr;
 
 	i = 0;
 	j = 1;
-	ptr = str;
-	ptr++;
-	ptr++;
-	while (ptr[i])
+	while (str[i])
 	{
-		if ((ptr[i] <= '9' && ptr[i] >= '0') || ptr[i] == ' ' || ptr[i] == '.' || ptr[i] == ',')
+		if ((str[i] <= '9' && str[i] >= '0') || str[i] == ' ' || str[i] == '.' || str[i] == ',')
 			i++;
 		else
 			return (0);
 	}
 	i = 3;
-	
-	while ( *ptr)
+printf("%s =>str\n",str);	
+	while ( *str)
 	{
-		if (ft_check_deci_1(&ptr) == 1)
-			j--;
-		else if (j == 0 && ft_check_entier(&ptr) == 1)
+		if (j == 0 && ft_check_entier(&str) == 1)
 			i--;
-		if (ft_check_deci_1(&ptr) ==  -1)
+		else if (ft_check_deci(&str) == 1)
+			j--;
+		else if (ft_check_deci(&str) == -1)
 			return (0);
-		ptr++;
+printf("%i =>i %i =>j %s =>str dans while\n",i,j,str);
+		str++;
 	}
+printf("%i =>i %i =>j \n",i,j);
 	if (i == 0 && j == 0)
 		return (1);
 	return (0);

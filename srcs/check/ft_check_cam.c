@@ -16,7 +16,6 @@ int	ft_check_cam(char *str)
 			return (0);
 	}
 	i = 6;
-printf("%i =>i %i =>j\n",i,j);
 	while (*str)
 	{
 		if (i == 0 && ft_check_entier(&str) == 1)
@@ -25,7 +24,6 @@ printf("%i =>i %i =>j\n",i,j);
 			i--;
 		str++;
 	}
-printf("%i =>i %i =>j\n",i,j);
 	if (i == 0 && j == 0)
 		return (1);
 	return (0);

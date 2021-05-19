@@ -22,12 +22,10 @@ int	ft_check_light(char *str)
 			j--;
 		else if (ft_check_deci(&str) == 1)
 			i--;
-		if (ft_check_deci(&str) == -1)
+		else if (ft_check_deci(&str) == -1)
 			return (0);
-printf("%i =>i %i =>j %s =>str dans while\n",i,j,str);
 		str++;
 	}
-printf("%i =>i %i =>j\n",i,j);
 	if (i == 0 && j == 0)
 		return (1);
 	return (0);
