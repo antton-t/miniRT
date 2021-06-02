@@ -3,23 +3,20 @@
 
 int	ft_check_deci(char **str)
 {
-	char	*ptr;
 	int	deci;
 
-	ptr = *str;
 	deci = 0;
-	while (*ptr == ' ')
-		ptr++;
-	if (*ptr == '-' || *ptr == '+')
-		ptr++;
-	while ((*ptr >= '0' && *ptr <= '9') || *ptr == '.')
+	while (**str == ' ' && **str  != '\0')
+		(*str)++;
+	if (**str == '-' || **str == '+')
+		(*str)++;
+	while (((**str >= '0' && **str <= '9') || **str == '.') && **str != '\0')
 	{
-		if (*ptr == '.')
+		if (**str == '.')
 			deci++;
-		ptr++;
+		(*str)++;
 	}
 	if (deci > 1)
 		return (-1);
-	*str = ptr;
 	return (1);
 }

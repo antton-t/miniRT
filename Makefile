@@ -21,15 +21,35 @@ DIR_PARSE_and_FORM =	srcs/ft_parse.c \
 			srcs/check/ft_check_light.c \
 			srcs/check/ft_check_cam.c \
 			srcs/check/ft_check_ambient.c \
+			srcs/check/ft_check_triangle.c \
 			srcs/check/ft_check_ambient_value.c \
 			srcs/check/ft_check_cam_value.c \
+			srcs/check/ft_check_sphere_value.c \
+			srcs/check/ft_check_square_value.c \
+			srcs/check/ft_check_cylinder_value.c \
+			srcs/check/ft_check_triangle_value.c \
 			srcs/check/ft_check_light_value.c \
+			srcs/check/ft_check_plane_value.c \
 			srcs/check/ft_check_deci.c \
 			srcs/check/ft_check_entier.c \
-			srcs/ft_init_reso.c \
-			srcs/ft_init_ambi.c \
-			srcs/ft_init_cam.c \
-			srcs/ft_init_light.c \
+			srcs/parse/ft_parse_ambient.c \
+			srcs/parse/ft_parse_cylinder.c \
+			srcs/parse/ft_parse_plane.c \
+			srcs/parse/ft_parse_sphere.c \
+			srcs/parse/ft_parse_triangle.c \
+			srcs/parse/ft_parse_camera.c \
+			srcs/parse/ft_parse_light.c \
+			srcs/parse/ft_parse_resolution.c \
+			srcs/parse/ft_parse_square.c \
+			srcs/init/ft_init_reso.c \
+			srcs/init/ft_init_ambi.c \
+			srcs/init/ft_init_cam.c \
+			srcs/init/ft_init_light.c \
+			srcs/init/ft_init_cyl.c \
+			srcs/init/ft_init_plane.c \
+			srcs/init/ft_init_sphere.c \
+			srcs/init/ft_init_tri.c \
+			srcs/init/ft_init_square.c \
 			srcs/form/ft_is_light.c \
 
 DIR_ADD =  \
