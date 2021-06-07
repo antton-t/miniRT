@@ -6,7 +6,7 @@ int	ft_check_triangle_value(t_ang *tri)
 	int	i;
 
 	i = 0;
-	if (tri->t_g >= 0 && tri->t_g <= 255)
+	if (tri->t_r >= 0 && tri->t_r <= 255)
 		i++;
 	if (tri->t_g >= 0 && tri->t_g <= 255)
 		i++;

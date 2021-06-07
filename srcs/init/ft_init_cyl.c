@@ -15,7 +15,6 @@ t_der	*ft_init_cyl(void)
 	new->c_3d_y = 0;
 	new->c_3d_z = 0;
 	new->c_d = 0;
-	new->c_d = 0;
 	new->c_h = 0;
 	new->c_r = 0;
 	new->c_g = 0;

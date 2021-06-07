@@ -1,6 +1,41 @@
 #include "libft.h"
 #include "ft_miniRT.h"
 
+void	ft_parse_cylinder_2(t_der *cyl, char *str)
+{
+	while (*str)
+	{
+		if (*str != ' ')
+			cyl->c_r = -1;
+		str++;
+	}
+}
+void	ft_parse_cylinder_1(t_der *cyl, char *str)
+{
+printf("%s =>str\n",str);
+	cyl->c_x = ft_atof_1(&str);
+	str++;
+	cyl->c_y = ft_atof_1(&str);
+	str++;
+	cyl->c_z = ft_atof_1(&str);
+	str++;
+	cyl->c_3d_x = ft_atof_1(&str);
+	str++;
+	cyl->c_3d_y = ft_atof_1(&str);
+	str++;
+	cyl->c_3d_z = ft_atof_1(&str);
+	str++;
+	cyl->c_d = ft_atof_1(&str);
+	str++;
+	cyl->c_h = ft_atof_1(&str);
+	str++;
+	cyl->c_r = ft_atoi_1(&str);
+	str++;
+	cyl->c_g = ft_atoi_1(&str);
+	str++;
+	cyl->c_b = ft_atoi_1(&str);
+	ft_parse_cylinder_2(cyl, str);
+}
 int	ft_parse_cylinder(char *str)
 {
 	t_der	*param_cyl;
@@ -16,25 +51,9 @@ int	ft_parse_cylinder(char *str)
 		str++;
 	else
 		return  (0);
-	//	if (ft_check_cylinder(str) == 0)
-	//		return (0);
-	param_cyl->c_x = ft_atof_1(&str);
-	str++;
-	param_cyl->c_y = ft_atof_1(&str);
-	str++;
-	param_cyl->c_x = ft_atof_1(&str);
-	str++;
-	param_cyl->c_3d_x = ft_atof_1(&str);
-	str++;
-	param_cyl->c_3d_y = ft_atof_1(&str);
-	str++;
-	param_cyl->c_3d_z = ft_atof_1(&str);
-	str++;
-	param_cyl->c_r = ft_atoi_1(&str);
-	str++;
-	param_cyl->c_g = ft_atoi_1(&str);
-	str++;
-	param_cyl->c_b = ft_atoi_1(&str);
+	if (ft_check_cylinder(str) == 0)
+		return (0);
+	ft_parse_cylinder_1(param_cyl, str);
 printf("%f =>c_x\n",param_cyl->c_x);
 printf("%f =>c_y\n",param_cyl->c_y);
 printf("%f =>c_z\n",param_cyl->c_z);

@@ -12,7 +12,7 @@ int	ft_check_cylinder_value(t_der *cyl)
 		i++;
 	if (cyl->c_3d_z >= -1 && cyl->c_3d_z <= 1)
 		i++;
-	if (cyl->c_g >= 0 && cyl->c_g <= 255)
+	if (cyl->c_r >= 0 && cyl->c_r <= 255)
 		i++;
 	if (cyl->c_g >= 0 && cyl->c_g <= 255)
 		i++;

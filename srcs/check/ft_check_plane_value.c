@@ -12,7 +12,7 @@ int	ft_check_plane_value(t_ane *pla)
 		i++;
 	if (pla->p_3d_z >= -1 && pla->p_3d_z <= 1)
 		i++;
-	if (pla->p_g >= 0 && pla->p_g <= 255)
+	if (pla->p_r >= 0 && pla->p_r <= 255)
 		i++;
 	if (pla->p_g >= 0 && pla->p_g <= 255)
 		i++;

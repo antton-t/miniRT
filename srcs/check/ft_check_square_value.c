@@ -12,7 +12,7 @@ int	ft_check_square_value(t_are *squ)
 		i++;
 	if (squ->s_3d_z >= -1 && squ->s_3d_z <= 1)
 		i++;
-	if (squ->s_g >= 0 && squ->s_g <= 255)
+	if (squ->s_r >= 0 && squ->s_r <= 255)
 		i++;
 	if (squ->s_g >= 0 && squ->s_g <= 255)
 		i++;

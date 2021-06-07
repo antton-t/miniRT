@@ -10,5 +10,6 @@ t_ion	*ft_init_reso(void)
 		return (NULL);
 	new->r_x = 0;
 	new->r_y = 0;
+	new->ok = 0;
 	return (new);
 }

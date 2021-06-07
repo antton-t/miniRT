@@ -1,12 +1,12 @@
 #include "libft.h"
 #include "ft_miniRT.h"
 
-int	ft_check_sphere(char *str)
+int	ft_check_plane(char *str)
 {
 	int	i;
 	int	j;
 
-	i = 4;
+	i = 6;
 	j = 3;
 	if (ft_check_letter(str) == 0)
 		return (0);

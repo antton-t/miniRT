@@ -3,31 +3,22 @@
 
 int	ft_check_reso(char *str)
 {
-	char	*ptr;
 	int	i;
 	int	j;
 
 	i = 0;
 	j = 3;
-	ptr = str;
-	ptr++;
-	ptr++;
-	while (ptr[i])
+	if (ft_check_letter(str) == 0)
+		return (0);
+	while(*str)
 	{
-		if ((ptr[i] <= '9' && ptr[i] >= '0') ||  ptr[i] == ' ')
-			i++;
-		else
-			return (0);
-	}
-	while(*ptr)
-	{
-		if (*ptr >= '0' && *ptr <= '9')
+		if (*str >= '0' && *str <= '9')
 		{
-			while (*ptr >= '0' && *ptr <= '9')
-				ptr++;
+			while (*str >= '0' && *str <= '9')
+				str++;
 			j--;
 		}
-		ptr++;	
+		str++;	
 	}
 	if (j !=  1)
 		return (0);

@@ -1,6 +1,32 @@
 #include "libft.h"
 #include "ft_miniRT.h"
 
+void	ft_parse_sphere_2(t_ere *sph, char *str)
+{
+	while (*str)
+	{
+		if (*str != ' ')
+			sph->s_r = -1;
+		str++;
+	}
+}
+void	ft_parse_sphere_1(t_ere *sph, char *str)
+{
+	sph->s_x = ft_atof_1(&str);
+	str++;
+	sph->s_y = ft_atof_1(&str);
+	str++;
+	sph->s_z = ft_atof_1(&str);
+	str++;
+	sph->s_dia = ft_atof_1(&str);
+	str++;
+	sph->s_r = ft_atoi_1(&str);
+	str++;
+	sph->s_g = ft_atoi_1(&str);
+	str++;
+	sph->s_b = ft_atoi_1(&str);
+	ft_parse_sphere_2(sph, str);
+}
 int	ft_parse_sphere(char *str)
 {
 	t_ere	*param_sphere;
@@ -16,8 +42,8 @@ int	ft_parse_sphere(char *str)
 		str++;
 	else
 		return (0);
-	//	if (ft_check_sphere(str) == 0)
-	//		return (0);
+		if (ft_check_sphere(str) == 0)
+			return (0);
 	param_sphere->s_x = ft_atof_1(&str);
 	str++;
 	param_sphere->s_y = ft_atof_1(&str);

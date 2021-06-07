@@ -5,6 +5,7 @@ typedef struct r_ion
 {
 	int	r_x;
 	int	r_y;
+	int	ok;
 }				t_ion;
 
 typedef  struct a_ent

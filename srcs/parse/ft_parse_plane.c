@@ -1,6 +1,36 @@
 #include "libft.h"
 #include "ft_miniRT.h"
 
+void	ft_parse_plane_2(t_ane *pla, char *str)
+{
+	while (*str)
+	{
+		if (*str != ' ')
+			pla->p_r = -1;
+		str++;
+	}
+}
+void	ft_parse_plane_1(t_ane *pla, char *str)
+{
+	pla->p_x = ft_atof_1(&str);
+	str++;
+	pla->p_y = ft_atof_1(&str);
+	str++;
+	pla->p_x = ft_atof_1(&str);
+	str++;
+	pla->p_3d_x = ft_atof_1(&str);
+	str++;
+	pla->p_3d_y = ft_atof_1(&str);
+	str++;
+	pla->p_3d_z = ft_atof_1(&str);
+	str++;
+	pla->p_r = ft_atoi_1(&str);
+	str++;
+	pla->p_g = ft_atoi_1(&str);
+	str++;
+	pla->p_b = ft_atoi_1(&str);
+	ft_parse_plane_2(pla, str);
+}
 int	ft_parse_plane(char *str)
 {
 	t_ane	*param_plane;
@@ -16,25 +46,9 @@ int	ft_parse_plane(char *str)
 		str++;
 	else
 		return  (0);
-	//	if (ft_check_plane(str) == 0)
-	//		return (0);
-	param_plane->p_x = ft_atof_1(&str);
-	str++;
-	param_plane->p_y = ft_atof_1(&str);
-	str++;
-	param_plane->p_x = ft_atof_1(&str);
-	str++;
-	param_plane->p_3d_x = ft_atof_1(&str);
-	str++;
-	param_plane->p_3d_y = ft_atof_1(&str);
-	str++;
-	param_plane->p_3d_z = ft_atof_1(&str);
-	str++;
-	param_plane->p_r = ft_atoi_1(&str);
-	str++;
-	param_plane->p_g = ft_atoi_1(&str);
-	str++;
-	param_plane->p_b = ft_atoi_1(&str);
+	if (ft_check_plane(str) == 0)
+		return (0);
+	ft_parse_plane_1(param_plane, str);
 printf("%f =>p_x\n",param_plane->p_x);
 printf("%f =>p_y\n",param_plane->p_y);
 printf("%f =>p_z\n",param_plane->p_z);

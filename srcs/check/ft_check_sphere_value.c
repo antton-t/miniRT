@@ -6,7 +6,7 @@ int	ft_check_sphere_value(t_ere *sph)
 	int	i;
 
 	i = 0;
-	if (sph->s_g >= 0 && sph->s_g <= 255)
+	if (sph->s_r >= 0 && sph->s_r <= 255)
 		i++;
 	if (sph->s_g >= 0 && sph->s_g <= 255)
 		i++;

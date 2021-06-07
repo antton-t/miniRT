@@ -21,8 +21,14 @@ DIR_PARSE_and_FORM =	srcs/ft_parse.c \
 			srcs/check/ft_check_light.c \
 			srcs/check/ft_check_cam.c \
 			srcs/check/ft_check_ambient.c \
+			srcs/check/ft_check_sphere.c \
+			srcs/check/ft_check_plane.c \
+			srcs/check/ft_check_square.c \
+			srcs/check/ft_check_cylinder.c \
 			srcs/check/ft_check_triangle.c \
+			srcs/check/ft_check_letter.c \
 			srcs/check/ft_check_ambient_value.c \
+			srcs/check/ft_check_reso_value.c \
 			srcs/check/ft_check_cam_value.c \
 			srcs/check/ft_check_sphere_value.c \
 			srcs/check/ft_check_square_value.c \
